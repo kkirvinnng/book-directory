@@ -12,7 +12,7 @@ npm install --save pg pg-hstore
 ```
 ![image](https://user-images.githubusercontent.com/82684580/191640775-01da6737-75e6-4baa-a179-31045a977f91.png)
 
-### Then set up your env file
+### Then set up your .env file
 Following the `example.env`
 ```sh
 DB_USER=... 
