@@ -4,7 +4,7 @@ npm run build  # This will create the lib folder with the .js files, where Seque
 npm run db:create
 npm run migrate
 
-# Important: the following commands must be executed one at a time because csv files are not read in parallel.parallel
+# Important: the following commands must be executed one at a time because csv files are not read in parallel
 
 npm run seed -- --seed 20220919020000-users.js --seeders-path lib/shared/infraestructure/persistence/sequelize/seeds
 
