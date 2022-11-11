@@ -1,0 +1,9 @@
+const path = require('path')
+
+const dir = 'lib/shared/infraestructure/persistence/sequelize'
+
+module.exports = {
+    config: path.resolve(dir, 'SequelizeConfig.js'),
+    'seeders-path': path.resolve(dir, 'seeds'),
+    'migrations-path': path.resolve(dir, 'migrations')
+}
