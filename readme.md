@@ -3,7 +3,7 @@
 ## 🛠 Clone this repository and configure your database
 
 In my case, i'm using MySQL so if you want to use another database you will have to install the specific driver and change the Sequelize dialect. 
-This option is found in ```src/shared/infraestructure/persistence/sequelize/SequelizeConfig.ts```
+This option can be found in ```src/shared/infraestructure/persistence/sequelize/SequelizeConfig.ts```
 
 ![image](https://user-images.githubusercontent.com/82684580/191640637-c22574ad-5e27-4ac5-84a0-d1fffb78e930.png)
 ### Example with Postgres
