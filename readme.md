@@ -8,7 +8,7 @@ npm run db:create
 ```sh
 npm run migrate
 ```
-❗❗ The following commands must be executed one at a time because csv files are not read in parallel
+❗❗ Do not use ```npx sequelize-cli db:seed``` because csv files are not read in parallel. To solve it you must execute the following commands
 ```sh
 npm run seed -- --seed 20220919020000-users.js --seeders-path lib/shared/infraestructure/persistence/sequelize/seeds
 ```
