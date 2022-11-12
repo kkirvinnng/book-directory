@@ -42,3 +42,57 @@ npm run seed -- --seed 20220920020000-books.js --seeders-path lib/shared/infraes
 ```sh
 npm run seed -- --seed 20220921020000-book_ratings.js --seeders-path lib/shared/infraestructure/persistence/sequelize/seeds
 ```
+
+## 📌 End Points
+### Users
+
+~~~ 
+GET     /api/user          Query: id         
+                           Example: /api/user?id=1
+                           
+                           
+POST    /api/user/create   Body: location, age 
+
+
+PUT     /api/user/update   Body: userId, location, ag
+
+
+DELETE  /api/user/delete   Body: userId
+~~~ 
+
+### Books
+~~~ 
+GET     /api/book          Query: bookTitle, bookAuthor, yearOfPublication, publisher
+                           Example: /api/book?bookTitle=Icebound
+                           
+
+GET     /api/book/isbn     Query: isbn
+                           Example: /api/book/isbn?isbn=0553582909
+                           
+                                
+POST    /api/book/create   Body:  isbn, bookTitle, bookAuthor, yearOfPublication, publisher,  
+                                imageURL_S, imageURL_M, imageURL_L
+                                
+
+DELETE  /api/book/delete   Query: isbn
+                           Example: /api/book/delete?isbn=0553582909
+~~~ 
+
+### Book Ratings
+~~~ 
+GET     /api/book-rating/isbn     Query: isbn
+                                  Example: /api/book-rating/isbn?isbn=3257224281
+                                  
+
+GET     /api/book-rating/userId   Query: userId
+                                  Example: /api/book-rating/userId?userId=276744
+                                  
+
+POST    /api/book-rating/create   Body:  isbn, userId, bookRating
+~~~ 
+
+
+
+
+
+
