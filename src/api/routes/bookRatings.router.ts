@@ -1,8 +1,8 @@
 import { Router } from 'express'
 import container from '../../dependency-injection/container'
 import { ContainerSymbols } from '../../dependency-injection/symbols'
-import { CreateRatingController } from '../controllers/book-directory/book-rating/CreateRating.usecase'
-import { FindAllRatingsByISBNController } from '../controllers/book-directory/book-rating/FindAllRatingsByISBN.usecase'
+import { CreateRatingController } from '../controllers/book-directory/book-rating/CreateRating.ctrl'
+import { FindAllRatingsByISBNController } from '../controllers/book-directory/book-rating/FindAllRatingsByISBN.ctrl'
 import { FindAllRatingsByUserIdController } from '../controllers/book-directory/book-rating/FindAllRatingsByUserId'
 
 const router = Router()

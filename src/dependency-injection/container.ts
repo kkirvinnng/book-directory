@@ -1,6 +1,6 @@
 import { Container } from 'inversify'
-import { CreateRatingController } from '../api/controllers/book-directory/book-rating/CreateRating.usecase'
-import { FindAllRatingsByISBNController } from '../api/controllers/book-directory/book-rating/FindAllRatingsByISBN.usecase'
+import { CreateRatingController } from '../api/controllers/book-directory/book-rating/CreateRating.ctrl'
+import { FindAllRatingsByISBNController } from '../api/controllers/book-directory/book-rating/FindAllRatingsByISBN.ctrl'
 import { FindAllRatingsByUserIdController } from '../api/controllers/book-directory/book-rating/FindAllRatingsByUserId'
 import { BookFinderController } from '../api/controllers/book-directory/books/BookFinder.ctrl'
 import { CreateBookController } from '../api/controllers/book-directory/books/CreateBook.ctrl'
