@@ -9,7 +9,7 @@ import { usersModel } from './models/users.model'
 @injectable()
 export class SequelizeUserRepository implements UserRepository {
 
-    private async toDomain(persistanceUser: SequelizeUser) {
+    private toDomain(persistanceUser: SequelizeUser) {
         const { Age, Location } = persistanceUser
 
         const age = Age ? new AgeVO(Age) : null
@@ -40,7 +40,7 @@ export class SequelizeUserRepository implements UserRepository {
 
         if (!userFound) return null
 
-        const userDomain = await this.toDomain(userFound)
+        const userDomain = this.toDomain(userFound)
 
 
         return userDomain

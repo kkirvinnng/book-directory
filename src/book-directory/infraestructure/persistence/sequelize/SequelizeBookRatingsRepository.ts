@@ -11,7 +11,7 @@ import { SequelizeBookRatings } from './models/SequelizeBookRatings'
 @injectable()
 export class SequelizeBookRatingsRepository implements BookRatingsRepository {
 
-    private async toDomain(persistanceBookRating: SequelizeBookRatings) {
+    private toDomain(persistanceBookRating: SequelizeBookRatings) {
         const { User_ID, ISBN, Book_Rating } = persistanceBookRating
 
         const isbnVO = new IsbnVO(ISBN)
@@ -46,12 +46,10 @@ export class SequelizeBookRatingsRepository implements BookRatingsRepository {
 
         if (!ratingFound) return null
 
-        const ratingDomain = await Promise.all(
+        const ratingDomain = ratingFound.map(rating => {
+            return this.toDomain(rating)
+        })
 
-            ratingFound.map(async rating => {
-                return await this.toDomain(rating)
-            })
-        )
 
         return ratingDomain
     }
@@ -62,12 +60,10 @@ export class SequelizeBookRatingsRepository implements BookRatingsRepository {
 
         if (!ratingFound) return null
 
-        const ratingDomain = await Promise.all(
+        const ratingDomain = ratingFound.map(rating => {
+            return this.toDomain(rating)
+        })
 
-            ratingFound.map(async rating => {
-                return await this.toDomain(rating)
-            })
-        )
 
         return ratingDomain
     }

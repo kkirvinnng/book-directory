@@ -12,7 +12,7 @@ import { DomainToPersistenceBookKeys as BOOK_KEYS } from '../../../domain/consta
 @injectable()
 export class SequelizeBooksRepository implements BooksRepository {
 
-    private async toDomain(persistanceBooks: SequelizeBooks) {
+    private toDomain(persistanceBooks: SequelizeBooks) {
         const {
             ISBN,
             Book_Title,
@@ -74,7 +74,7 @@ export class SequelizeBooksRepository implements BooksRepository {
 
         if (!bookFound) return null
 
-        const bookDomain = await this.toDomain(bookFound)
+        const bookDomain = this.toDomain(bookFound)
 
         return bookDomain
     }
@@ -91,12 +91,10 @@ export class SequelizeBooksRepository implements BooksRepository {
 
         if (!booksFound) return null
 
-        const booksDomain = await Promise.all(
+        const booksDomain = booksFound.map(book => {
+            return this.toDomain(book)
+        })
 
-            booksFound.map(async book => {
-                return await this.toDomain(book)
-            })
-        )
 
         return booksDomain
     }
@@ -140,12 +138,9 @@ export class SequelizeBooksRepository implements BooksRepository {
 
         if (!booksFound) return null
 
-        const bookDomain = await Promise.all(
-
-            booksFound.map(async book => {
-                return await this.toDomain(book)
-            })
-        )
+        const bookDomain = booksFound.map(book => {
+            return this.toDomain(book)
+        })
 
         return bookDomain
     }
